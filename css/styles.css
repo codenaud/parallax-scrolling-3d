@@ -1,0 +1,215 @@
+/*#region fonts*/
+/* 
+    - Google fonts
+  ----------------------
+
+    - Fonts
+    - Family: [Roboto](https://fonts.google.com/specimen/Roboto?query=roboto)
+    - Weights: 100, 300, 400, 500, 700, 900
+    - font-family: 'Roboto', sans-serif;
+
+    ----------------------
+
+    - Fonts
+    - Family: [Roboto Mono](https://fonts.google.com/specimen/Roboto+Mono?query=roboto)
+    - Weights: 100, 200, 300, 400, 500, 600, 700
+    - font-family: 'Roboto Mono', monospace;    
+
+    ---------------------- 
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+/* #endregion fonts*/
+
+/*#region global reset*/
+*,
+*:before,
+*:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  width: 0;
+}
+/*#endregion global reset*/
+
+/*#region root & variables*/
+:root {
+  /* font */
+  --f-family-primary: 'Roboto', sans-serif;
+  --f-family-secondary: 'Roboto Mono', monospace;
+
+  /* font weight */
+  --f-thin: 100;
+  --f-extralight: 200;
+  --f-light: 300;
+  --f-regular: 400;
+  --f-medium: 500;
+  --f-semibold: 600;
+  --f-bold: 700;
+  --f-extrabold: 800;
+  --f-black: 900;
+
+  /* Colors */
+  --primary-color: ;
+  --secondary-color: ;
+  --black: black;
+  --white: white;
+  --shadow-moon: #090d19;
+
+  /* Padding */
+  --padding-top: 1.3rem;
+}
+/*#endregion root & variables*/
+
+/*#region general*/
+body {
+  background-color: var(--black);
+  color: var(--white);
+  margin: 0;
+  font-family: var(--f-family-primary);
+  font-size: 0.95rem;
+  overflow-x: hidden;
+}
+
+h1 {
+  padding-bottom: 0.5rem;
+  font-family: var(--f-family-primary);
+  font-weight: var(--f-bold);
+}
+h5 {
+  font-family: var(--f-family-secondary);
+  font-weight: var(--f-medium);
+  padding-bottom: 0.5rem;
+}
+/*#endregion general*/
+
+/*#region container*/
+.container {
+  overflow: hidden;
+  height: max-content;
+}
+
+/*#endregion container*/
+
+/*#region banner*/
+.banner {
+  height: 50vw;
+  position: relative;
+  overflow: hidden;
+}
+.banner .bg {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+  background-position: center bottom;
+  transition: 0.1s;
+}
+.banner .bg:nth-child(1) {
+  background-image: url(../assets/img/banner_0.png);
+}
+.banner .bg:nth-child(2) {
+  background-image: url(../assets/img/banner_1.png);
+}
+.banner .bg:nth-child(3) {
+  top: 25%;
+  text-align: center;
+}
+.banner .bg:nth-child(3) h1,
+.banner .bg:nth-child(3) h5 {
+  font-size: 2.5rem;
+  margin: 0;
+  text-shadow: 0 0px 20px var(--shadow-moon);
+  padding-bottom: 0;
+}
+.banner .bg:nth-child(3) h1 {
+  font-size: 8vw;
+}
+.banner .bg:nth-child(4) {
+  background-image: url(../assets/img/banner_2.png);
+}
+.banner .bg:nth-child(5) {
+  background-image: url(../assets/img/banner_3.png);
+}
+/*#endregion banner*/
+
+/*#region section*/
+.section {
+  min-height: 100vh;
+  background-color: var(--black);
+  z-index: 1;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.section::before {
+  position: absolute;
+  height: 200px;
+  width: 100vw;
+  background: linear-gradient(to top, var(--black), transparent);
+  content: '';
+  bottom: 100%;
+  left: 0;
+}
+.section.tab1 {
+  background: linear-gradient(to top, var(--black) 0%, transparent 20%, var(--black) 80%), url(../assets/img/tab_1.jpg);
+}
+.section.tab2 {
+  background: linear-gradient(to top, var(--black) 0%, transparent 20%, var(--black) 80%), url(../assets/img/tab_2.jpg);
+}
+.section.tab1 .content {
+  width: 700px;
+  max-width: 90%;
+  color: var(--white);
+}
+.section.tab2 .content {
+  color: var(--white);
+  width: 900px;
+  max-width: 90%;
+}
+.section.tab2 .content .des {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.3rem;
+}
+/*#endregion section*/
+
+/*#region footer*/
+footer {
+  height: 40px;
+  padding: 1rem 0;
+  color: grey;
+}
+footer p {
+  text-align: center;
+  font-size: 0.75rem;
+  padding-bottom: 0.2rem;
+}
+footer a {
+  text-decoration: none;
+  color: #5fa9af;
+  font-weight: var(--f-semibold);
+}
+
+/*#endregion footer*/
+
+/* Estilos para la versión móvil */
+@media screen and (max-width: 768px) {
+  .banner .bg:nth-child(3) {
+    top: 25%;
+  }
+  .banner .bg:nth-child(3) h5 {
+    font-size: 0.6rem;
+  }
+  .banner .bg:nth-child(3) h1 {
+    font-size: 7vw;
+  }
+}
