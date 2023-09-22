@@ -1,6 +1,6 @@
 # Parallax Scrolling 3D
 
-[![Masking Text on Image Screenshots](assets/screenshots/git-screenshot01.png)](https://codenaud.github.io/parallax-scrolling-3d/)
+[![Masking Text on Image Screenshots](assets/screenshots/git-screenshot01.png)](https://parallax-scrolling-3d.netlify.app/)
 
 ## Description
 
@@ -12,7 +12,7 @@ The parallax scrolling effect is a technique that allows images and content to m
 
 ## Live Demo
 
-You can experience Parallax Scrolling 3D and explore by visiting the live demo [Live Demo](https://codenaud.github.io/parallax-scrolling-3d/)
+You can experience Parallax Scrolling 3D and explore by visiting the live demo on Netlify [Live Demo](https://parallax-scrolling-3d.netlify.app/)
 
 ## Features
 
